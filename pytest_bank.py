@@ -1,13 +1,17 @@
 from bankOpr import BankOper
 
-def initial_bal():
-    assert initial_bal (20000,0,2000)
-    calcutaeTotal = 18000
+def test_deposit():
+    calculateTotal, Total_amount = BankOper(20000, 0, 2000)
 
-def deposit():
-    assert deposit(23000, 2000, 3000)
-    calculateTotal =22000
+    assert calculateTotal == 20000
+    assert Total_amount == 180000
 
-def withdraw():
-    assert withdraw(50000,0,2000)
-    calculateTotal = 48000
+def test_withdraw():
+    calculateTotal, Total_amount = BankOper(23000, 2000, 3000)
+    assert calculateTotal == 25000
+    assert Total_amount == 22000
+
+def test_anyamount():
+    calculateTotal, Total_amount = BankOper(50000, 0, 2000)
+    assert calculateTotal == 50000
+    assert Total_amount == 48000
